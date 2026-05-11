@@ -1,11 +1,145 @@
-body{
-  background:black;
-  color:white;
-  font-family:Arial;
-  text-align:center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1{
-  color:red;
-  margin-top:30px;
+body{
+    background:black;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    flex-wrap:wrap;
+    background:#111;
+}
+
+.logo{
+    color:red;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.search-box{
+    padding:10px;
+    width:250px;
+    border:none;
+    border-radius:10px;
+}
+
+.login-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.hero{
+    height:90vh;
+    background:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.7);
+    padding:30px;
+    border-radius:20px;
+    width:90%;
+    max-width:500px;
+}
+
+.hero h1{
+    color:red;
+    font-size:60px;
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:20px;
+}
+
+.watch-btn{
+    background:red;
+    color:white;
+    padding:15px 30px;
+    border:none;
+    border-radius:15px;
+    font-size:18px;
+}
+
+.trending{
+    padding:40px 20px;
+}
+
+.trending h2{
+    color:red;
+    margin-bottom:20px;
+    font-size:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.card button{
+    background:red;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+@media(max-width:768px){
+
+    .logo{
+        font-size:30px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .search-box{
+        width:100%;
+        margin:10px 0;
+    }
+
+    header{
+        flex-direction:column;
+        gap:10px;
+    }
 }
