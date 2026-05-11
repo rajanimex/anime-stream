@@ -434,12 +434,14 @@ Kurosaw is a modern anime streaming UI designed for exploring and organizing ani
 <div class="popup" id="popup">
 <div class="close-btn" onclick="closePopup()">×</div>
 <h2>Login</h2>
-<input type="text" placeholder="Username">
-<input type="password" placeholder="Password">
-<button>Login</button>
-</div>
+<input type="email" id="email" placeholder="Email">
 
-<script>
+<input type="password" id="password" placeholder="Password">
+
+<button onclick="signup()">Sign Up</button>
+
+<button onclick="login()">Login</button>
+</div>
 function openPopup(){
 document.getElementById('popup').classList.add('active');
 document.getElementById('overlay').classList.add('active');
@@ -452,10 +454,15 @@ document.getElementById('overlay').classList.remove('active');
 </script>
 
 <script src="script.js"></script>
-<<script type="module">
+<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
+  import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.13.0/firebase-auth.js";
+  
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
@@ -467,7 +474,30 @@ document.getElementById('overlay').classList.remove('active');
     messagingSenderId: "537864439227",
     appId: "1:537864439227:web:359208d93110f6aa7cf09e"
   };
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+  window.signup = async function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-</script>>
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    alert("Account Created Successfully");
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+window.login = async function () {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Login Successful");
+  } catch (error) {
+    alert(error.message);
+  }
+};
+  
+</script>
