@@ -3,13 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AniHive</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Kurosaw Anime</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
 margin:0;
 padding:0;
@@ -23,35 +20,38 @@ color:white;
 overflow-x:hidden;
 }
 
-/* NAVBAR */
-
 .navbar{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-padding:18px 40px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(10px);
+padding:18px 40px;
+background:rgba(0,0,0,0.65);
+backdrop-filter:blur(12px);
 z-index:1000;
 }
 
 .logo{
 font-size:32px;
 font-weight:700;
+color:white;
+}
+
+.logo span{
 color:#00e5ff;
 }
 
 .nav-links{
 display:flex;
-gap:25px;
+gap:28px;
 }
 
 .nav-links a{
 text-decoration:none;
-color:white;
+color:#ddd;
 font-size:15px;
 transition:0.3s;
 }
@@ -61,21 +61,19 @@ color:#00e5ff;
 }
 
 .search-box{
+width:240px;
 padding:12px 20px;
 border:none;
 border-radius:30px;
-width:240px;
 background:#151515;
 color:white;
 outline:none;
 }
 
-/* HERO */
-
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.85)),
 url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600');
 background-size:cover;
 background-position:center;
@@ -89,78 +87,73 @@ max-width:650px;
 }
 
 .hero h1{
-font-size:90px;
+font-size:82px;
 line-height:1;
-color:#00e5ff;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:22px;
-color:#ddd;
 line-height:1.7;
-margin-bottom:30px;
+color:#ddd;
+margin-bottom:35px;
 }
 
 .buttons{
 display:flex;
-gap:20px;
+gap:18px;
 }
 
 .btn{
 padding:16px 35px;
 border:none;
 border-radius:40px;
-font-size:18px;
+font-size:17px;
 font-weight:600;
 cursor:pointer;
 transition:0.3s;
 }
 
 .watch-btn{
-background:#00e5ff;
+background:white;
 color:black;
 }
 
 .login-btn{
-background:white;
-color:black;
+background:#111;
+color:white;
+border:1px solid #333;
 }
 
 .btn:hover{
 transform:scale(1.05);
 }
 
-/* SECTION */
-
 .section{
 padding:80px 50px;
 }
 
 .section-title{
-font-size:60px;
+font-size:52px;
 margin-bottom:40px;
-color:#00e5ff;
 }
-
-/* GRID */
 
 .anime-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
 .card{
 background:#111;
-border-radius:20px;
+border-radius:18px;
 overflow:hidden;
 transition:0.4s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 25px rgba(0,229,255,0.3);
+box-shadow:0 0 25px rgba(255,255,255,0.15);
 }
 
 .card img{
@@ -170,19 +163,42 @@ object-fit:cover;
 }
 
 .card-content{
-padding:20px;
+padding:18px;
 }
 
 .card-content h3{
 font-size:24px;
-margin-bottom:10px;
+margin-bottom:8px;
 }
 
 .card-content p{
 color:#aaa;
 }
 
-/* LOGIN POPUP */
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.about p{
+color:#bbb;
+line-height:1.8;
+font-size:18px;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+color:#888;
+border-top:1px solid #222;
+}
 
 .popup{
 position:fixed;
@@ -190,10 +206,10 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%) scale(0);
 background:#111;
-padding:40px;
-border-radius:20px;
+padding:35px;
 width:320px;
-z-index:2000;
+border-radius:20px;
+z-index:3000;
 transition:0.3s;
 }
 
@@ -212,7 +228,7 @@ padding:14px;
 margin-bottom:15px;
 border:none;
 border-radius:10px;
-background:#222;
+background:#1c1c1c;
 color:white;
 }
 
@@ -220,10 +236,10 @@ color:white;
 width:100%;
 padding:14px;
 border:none;
-background:#00e5ff;
+border-radius:10px;
+background:white;
 color:black;
 font-weight:700;
-border-radius:10px;
 cursor:pointer;
 }
 
@@ -231,11 +247,9 @@ cursor:pointer;
 position:absolute;
 top:10px;
 right:15px;
-font-size:25px;
+font-size:24px;
 cursor:pointer;
 }
-
-/* OVERLAY */
 
 .overlay{
 position:fixed;
@@ -245,14 +259,12 @@ width:100%;
 height:100%;
 background:rgba(0,0,0,0.7);
 display:none;
-z-index:1500;
+z-index:2000;
 }
 
 .overlay.active{
 display:block;
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -263,12 +275,13 @@ padding:15px;
 }
 
 .logo{
-font-size:45px;
+font-size:42px;
 }
 
 .nav-links{
 flex-wrap:wrap;
 justify-content:center;
+gap:15px;
 }
 
 .search-box{
@@ -279,14 +292,15 @@ width:100%;
 padding:25px;
 text-align:center;
 justify-content:center;
+height:85vh;
 }
 
 .hero h1{
-font-size:60px;
+font-size:55px;
 }
 
 .hero p{
-font-size:20px;
+font-size:18px;
 }
 
 .buttons{
@@ -299,7 +313,7 @@ padding:60px 20px;
 }
 
 .section-title{
-font-size:45px;
+font-size:42px;
 text-align:center;
 }
 
@@ -309,131 +323,132 @@ gap:15px;
 }
 
 .card img{
-height:240px;
+height:220px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.about h2{
+font-size:40px;
+text-align:center;
+}
+
+.about p{
+text-align:center;
+font-size:16px;
 }
 
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-
 <nav class="navbar">
-
-<div class="logo">AniHive</div>
+<div class="logo"><span>K</span>urosaw</div>
 
 <div class="nav-links">
 <a href="#">Home</a>
-<a href="#">Trending</a>
-<a href="#">Movies</a>
-<a href="#">Latest</a>
+<a href="#">Catalog</a>
+<a href="#">News</a>
+<a href="#">Collections</a>
 </div>
 
 <input type="text" class="search-box" placeholder="Search anime...">
-
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
-
 <div class="hero-content">
-
-<h1>Solo Leveling</h1>
-
+<h1>Chainsaw Man</h1>
 <p>
-Watch premium anime with cinematic UI and smooth streaming experience on all devices.
+Watch premium anime with cinematic UI and smooth streaming experience on mobile and laptop.
 </p>
 
 <div class="buttons">
-
-<button class="btn watch-btn">▶ Watch Now</button>
-
+<button class="btn watch-btn">Watch Now</button>
 <button class="btn login-btn" onclick="openPopup()">Login</button>
-
 </div>
-
 </div>
-
 </section>
 
-<!-- TRENDING -->
-
 <section class="section">
-
-<h2 class="section-title">Trending Anime</h2>
+<h2 class="section-title">Special For You</h2>
 
 <div class="anime-grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
+<img src="https://wallpapercave.com/wp/wp9428008.jpg">
 <div class="card-content">
-<h3>Dark Ninja</h3>
+<h3>Solo Leveling</h3>
 <p>Action Anime</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200">
+<img src="https://wallpapercave.com/wp/wp8800619.jpg">
 <div class="card-content">
-<h3>Shadow Hero</h3>
+<h3>Tokyo Revengers</h3>
+<p>Adventure Anime</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://wallpapercave.com/wp/wp9387427.jpg">
+<div class="card-content">
+<h3>Jujutsu Kaisen</h3>
 <p>Fantasy Anime</p>
 </div>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200">
+<img src="https://wallpapercave.com/wp/wp5061592.jpg">
 <div class="card-content">
-<h3>Cyber Tokyo</h3>
-<p>Sci-Fi Anime</p>
-</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200">
-<div class="card-content">
-<h3>Dragon World</h3>
-<p>Adventure Anime</p>
+<h3>Demon Slayer</h3>
+<p>Dark Anime</p>
 </div>
 </div>
 
 </div>
-
 </section>
 
-<!-- LOGIN -->
+<section class="section about">
+<div>
+<h2>About Project</h2>
+</div>
+
+<div>
+<p>
+Kurosaw is a modern anime streaming UI designed for exploring and organizing anime collections with cinematic visuals and smooth mobile experience.
+</p>
+</div>
+</section>
+
+<div class="footer">
+© 2026 Kurosaw Anime Streaming Platform
+</div>
 
 <div class="overlay" id="overlay"></div>
 
 <div class="popup" id="popup">
-
 <div class="close-btn" onclick="closePopup()">×</div>
-
 <h2>Login</h2>
-
 <input type="text" placeholder="Username">
-
 <input type="password" placeholder="Password">
-
 <button>Login</button>
-
 </div>
 
 <script>
-
 function openPopup(){
-document.getElementById("popup").classList.add("active");
-document.getElementById("overlay").classList.add("active");
+document.getElementById('popup').classList.add('active');
+document.getElementById('overlay').classList.add('active');
 }
 
 function closePopup(){
-document.getElementById("popup").classList.remove("active");
-document.getElementById("overlay").classList.remove("active");
+document.getElementById('popup').classList.remove('active');
+document.getElementById('overlay').classList.remove('active');
 }
-
 </script>
 
 </body>
