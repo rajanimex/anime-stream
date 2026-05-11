@@ -15,128 +15,145 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#0a0a0a;
+background:#050505;
 color:white;
-padding:20px;
 overflow-x:hidden;
 }
 
-/* TOPBAR */
+/* NAVBAR */
 
-.topbar{
+.navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-gap:15px;
-margin-bottom:25px;
-flex-wrap:wrap;
+padding:18px 25px;
+background:#0f0f0f;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-font-size:32px;
+font-size:28px;
 font-weight:bold;
+color:#00e5ff;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:15px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#00e5ff;
 }
 
 .search-box{
-flex:1;
 display:flex;
-justify-content:center;
+align-items:center;
+gap:10px;
 }
 
 .search-box input{
-width:100%;
-max-width:500px;
-padding:14px 18px;
+padding:12px;
+width:220px;
 border:none;
-border-radius:30px;
-background:#fff;
-font-size:15px;
+border-radius:25px;
 outline:none;
-}
-
-.menu{
-display:flex;
-gap:12px;
-align-items:center;
-}
-
-.menu button{
-padding:10px 18px;
-border:none;
-border-radius:20px;
-background:#fff;
-cursor:pointer;
-font-weight:bold;
-}
-
-.menu .active{
-background:#00d9ff;
-color:black;
+background:#1a1a1a;
+color:white;
 }
 
 /* HERO */
 
 .hero{
-height:420px;
-border-radius:25px;
-overflow:hidden;
-position:relative;
+height:80vh;
 background:
-linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.8)),
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)),
 url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1400');
 background-size:cover;
 background-position:center;
 display:flex;
-align-items:flex-end;
-padding:35px;
-margin-bottom:35px;
+align-items:center;
+padding:40px;
 }
 
 .hero-content{
 max-width:500px;
 }
 
-.hero h1{
-font-size:55px;
-margin-bottom:10px;
+.hero-content h1{
+font-size:60px;
+margin-bottom:15px;
+color:#00e5ff;
 }
 
-.hero p{
-color:#ddd;
+.hero-content p{
+font-size:16px;
 line-height:1.6;
-margin-bottom:20px;
+color:#ddd;
+margin-bottom:25px;
 }
 
-.hero button{
-padding:14px 25px;
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.watch-btn{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+background:#00e5ff;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+.login-btn{
+padding:14px 28px;
 border:none;
 border-radius:30px;
 background:white;
-font-size:16px;
+color:black;
 font-weight:bold;
 cursor:pointer;
 }
 
 /* SECTION */
 
+.section{
+padding:40px 20px;
+}
+
 .section-title{
-font-size:34px;
+font-size:32px;
 margin-bottom:25px;
+color:#00e5ff;
 }
 
 /* CARDS */
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
 .card{
-background:#121212;
+background:#111;
 border-radius:18px;
 overflow:hidden;
 transition:0.3s;
+cursor:pointer;
 }
 
 .card:hover{
@@ -163,58 +180,92 @@ font-size:13px;
 color:#aaa;
 }
 
+/* LOGIN POPUP */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.popup-box{
+background:#121212;
+padding:30px;
+border-radius:20px;
+width:320px;
+text-align:center;
+}
+
+.popup-box h2{
+margin-bottom:20px;
+color:#00e5ff;
+}
+
+.popup-box input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+background:#1f1f1f;
+color:white;
+}
+
+.popup-box button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#00e5ff;
+font-weight:bold;
+cursor:pointer;
+}
+
+.close{
+margin-top:15px;
+display:inline-block;
+cursor:pointer;
+color:#aaa;
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
 
-body{
-padding:12px;
-}
-
-.topbar{
+.navbar{
 flex-direction:column;
-align-items:stretch;
+gap:15px;
 }
 
-.logo{
-text-align:center;
-font-size:28px;
-}
-
-.search-box{
-width:100%;
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .search-box input{
-max-width:100%;
-}
-
-.menu{
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.hero{
-height:320px;
-padding:20px;
-border-radius:18px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:14px;
-}
-
-.hero button{
 width:100%;
 }
 
-.section-title{
-font-size:28px;
+.hero{
+height:auto;
+padding:25px;
 text-align:center;
+justify-content:center;
+}
+
+.hero-content h1{
+font-size:38px;
+}
+
+.hero-buttons{
+justify-content:center;
 }
 
 .cards{
@@ -226,33 +277,34 @@ gap:12px;
 height:190px;
 }
 
-.card-content h3{
-font-size:15px;
+.section-title{
+text-align:center;
+font-size:28px;
 }
 
 }
 
 </style>
-
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- NAVBAR -->
 
-<div class="topbar">
+<div class="navbar">
 
 <div class="logo">
 AniHive
 </div>
 
-<div class="search-box">
-<input type="text" placeholder="Search for something...">
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Trending</a>
+<a href="#">Movies</a>
+<a href="#">Latest</a>
 </div>
 
-<div class="menu">
-<button>Explore</button>
-<button>New</button>
-<button class="active">Saved</button>
+<div class="search-box">
+<input type="text" placeholder="Search anime...">
 </div>
 
 </div>
@@ -266,21 +318,31 @@ AniHive
 <h1>Solo Leveling</h1>
 
 <p>
-Watch premium anime shows with modern dark UI and smooth mobile experience.
+Watch premium anime with dark cinematic UI and smooth mobile experience.
 </p>
 
-<button>
+<div class="hero-buttons">
+
+<button class="watch-btn">
 ▶ Watch Now
 </button>
+
+<button class="login-btn" onclick="openLogin()">
+Login
+</button>
+
+</div>
 
 </div>
 
 </section>
 
-<!-- TRENDING -->
+<!-- SECTION -->
+
+<section class="section">
 
 <h2 class="section-title">
-Saved Shows
+Trending Anime
 </h2>
 
 <div class="cards">
@@ -317,23 +379,47 @@ Saved Shows
 </div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
-<div class="card-content">
-<h3>Cyber World</h3>
-<p>Sci-Fi Anime</p>
-</div>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200">
-<div class="card-content">
-<h3>Night Hunter</h3>
-<p>Dark Anime</p>
-</div>
+</section>
+
+<!-- LOGIN POPUP -->
+
+<div class="popup" id="loginPopup">
+
+<div class="popup-box">
+
+<h2>Login</h2>
+
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Password">
+
+<button>
+Login Now
+</button>
+
+<div class="close" onclick="closeLogin()">
+Close
 </div>
 
 </div>
+
+</div>
+
+<!-- JS -->
+
+<script>
+
+function openLogin(){
+document.getElementById("loginPopup").style.display="flex";
+}
+
+function closeLogin(){
+document.getElementById("loginPopup").style.display="none";
+}
+
+</script>
 
 </body>
 </html>
