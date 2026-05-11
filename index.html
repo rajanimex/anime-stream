@@ -3,9 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anime Stream</title>
+<title>RajAnimeX</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#070707;
+color:white;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 25px;
+background:#111;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#ff2e63;
+letter-spacing:1px;
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff2e63;
+}
+
+.search input{
+padding:10px;
+border:none;
+border-radius:8px;
+width:180px;
+outline:none;
+background:#222;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:75vh;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:30px;
+}
+
+.hero-box{
+max-width:500px;
+}
+
+.hero-box h1{
+font-size:48px;
+margin-bottom:15px;
+color:#ff2e63;
+}
+
+.hero-box p{
+font-size:16px;
+line-height:1.6;
+color:#ddd;
+margin-bottom:25px;
+}
+
+.hero-box button{
+padding:13px 25px;
+border:none;
+border-radius:10px;
+background:#ff2e63;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+/* SECTION */
+
+.section{
+padding:40px 20px;
+}
+
+.section-title{
+font-size:28px;
+margin-bottom:25px;
+color:#ff2e63;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:18px;
+}
+
+.card{
+background:#111;
+border-radius:15px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card-content{
+padding:12px;
+}
+
+.card-content h3{
+font-size:16px;
+margin-bottom:8px;
+}
+
+.card-content p{
+font-size:13px;
+color:#aaa;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#111;
+color:#777;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+padding:15px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.search input{
+width:100%;
+}
+
+.hero{
+height:auto;
+padding:20px;
+text-align:center;
+justify-content:center;
+}
+
+.hero-box h1{
+font-size:34px;
+}
+
+.hero-box p{
+font-size:14px;
+}
+
+.hero-box button{
+width:100%;
+}
+
+.section-title{
+text-align:center;
+font-size:24px;
+}
+
+.cards{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.card img{
+height:180px;
+}
+
+}
+
+</style>
 
 </head>
 <body>
@@ -13,30 +230,30 @@
 <header>
 
 <div class="logo">
-ANIME STREAM
+RajAnimeX
 </div>
 
 <nav>
 <a href="#">Home</a>
+<a href="#">Trending</a>
 <a href="#">Latest</a>
-<a href="#">Popular</a>
 <a href="#">Movies</a>
 </nav>
 
 <div class="search">
-<input type="text" placeholder="Search Anime...">
+<input type="text" placeholder="Search Anime">
 </div>
 
 </header>
 
-<section class="banner">
+<section class="hero">
 
-<div class="overlay">
+<div class="hero-box">
 
-<h1>ONE PIECE</h1>
+<h1>Watch Anime Online</h1>
 
 <p>
-Watch trending anime in HD quality with modern streaming experience.
+Enjoy trending anime with premium dark UI and smooth experience on mobile and laptop.
 </p>
 
 <button>Watch Now</button>
@@ -45,35 +262,61 @@ Watch trending anime in HD quality with modern streaming experience.
 
 </section>
 
-<section class="latest">
+<section class="section">
 
-<h2>Latest Episodes</h2>
+<h2 class="section-title">
+Trending Anime
+</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200">
-<h3>Ninja War</h3>
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
+
+<div class="card-content">
+<h3>Dark Ninja</h3>
+<p>Action Anime Series</p>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
-<h3>Tokyo Fight</h3>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200">
-<h3>Dragon Hero</h3>
+
+<div class="card-content">
+<h3>Tokyo Legend</h3>
+<p>Adventure Anime</p>
+</div>
+
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200">
-<h3>Shadow Anime</h3>
+
+<div class="card-content">
+<h3>Shadow Hero</h3>
+<p>Fantasy Anime</p>
+</div>
+
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200">
+
+<div class="card-content">
+<h3>Dragon Fire</h3>
+<p>Trending Anime</p>
+</div>
+
 </div>
 
 </div>
 
 </section>
 
+<footer>
+© 2026 RajAnimeX • All Rights Reserved
+</footer>
+
 </body>
-</html> yh index me 
+</html>
