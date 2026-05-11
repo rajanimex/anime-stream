@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RajAnimeX</title>
+<title>AniHive</title>
 
 <style>
 
@@ -15,124 +15,128 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#020202;
+background:#0a0a0a;
 color:white;
+padding:20px;
 overflow-x:hidden;
 }
 
-/* HEADER */
+/* TOPBAR */
 
-header{
+.topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 25px;
-background:#0b0b0b;
-position:sticky;
-top:0;
-z-index:1000;
+gap:15px;
+margin-bottom:25px;
+flex-wrap:wrap;
 }
 
 .logo{
-font-size:24px;
+font-size:32px;
 font-weight:bold;
-color:#ff2e63;
-letter-spacing:1px;
 }
 
-nav{
+.search-box{
+flex:1;
 display:flex;
-gap:20px;
+justify-content:center;
 }
 
-nav a{
-text-decoration:none;
-color:white;
-font-size:15px;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#ff2e63;
-}
-
-.search input{
-padding:10px;
+.search-box input{
+width:100%;
+max-width:500px;
+padding:14px 18px;
 border:none;
-border-radius:8px;
-width:180px;
+border-radius:30px;
+background:#fff;
+font-size:15px;
 outline:none;
-background:#161616;
-color:white;
+}
+
+.menu{
+display:flex;
+gap:12px;
+align-items:center;
+}
+
+.menu button{
+padding:10px 18px;
+border:none;
+border-radius:20px;
+background:#fff;
+cursor:pointer;
+font-weight:bold;
+}
+
+.menu .active{
+background:#00d9ff;
+color:black;
 }
 
 /* HERO */
 
 .hero{
-height:75vh;
+height:420px;
+border-radius:25px;
+overflow:hidden;
+position:relative;
 background:
-linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.82)),
-url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200');
+linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1400');
 background-size:cover;
 background-position:center;
 display:flex;
-align-items:center;
-padding:30px;
+align-items:flex-end;
+padding:35px;
+margin-bottom:35px;
 }
 
-.hero-box{
+.hero-content{
 max-width:500px;
 }
 
-.hero-box h1{
-font-size:48px;
-margin-bottom:15px;
-color:#ff2e63;
+.hero h1{
+font-size:55px;
+margin-bottom:10px;
 }
 
-.hero-box p{
-font-size:16px;
+.hero p{
+color:#ddd;
 line-height:1.6;
-color:#cfcfcf;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
-.hero-box button{
-padding:13px 25px;
+.hero button{
+padding:14px 25px;
 border:none;
-border-radius:10px;
-background:#ff2e63;
-color:white;
+border-radius:30px;
+background:white;
 font-size:16px;
+font-weight:bold;
 cursor:pointer;
 }
 
 /* SECTION */
 
-.section{
-padding:40px 20px;
-}
-
 .section-title{
-font-size:28px;
+font-size:34px;
 margin-bottom:25px;
-color:#ff2e63;
 }
 
 /* CARDS */
 
 .cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:18px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
 }
 
 .card{
-background:#0f0f0f;
-border-radius:15px;
+background:#121212;
+border-radius:18px;
 overflow:hidden;
 transition:0.3s;
-border:1px solid #1b1b1b;
 }
 
 .card:hover{
@@ -141,9 +145,8 @@ transform:translateY(-5px);
 
 .card img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
-filter:brightness(0.85);
 }
 
 .card-content{
@@ -151,75 +154,80 @@ padding:12px;
 }
 
 .card-content h3{
-font-size:16px;
-margin-bottom:8px;
+font-size:18px;
+margin-bottom:6px;
 }
 
 .card-content p{
 font-size:13px;
-color:#999;
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:20px;
-background:#0b0b0b;
-color:#666;
-font-size:14px;
+color:#aaa;
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-header{
+body{
+padding:12px;
+}
+
+.topbar{
 flex-direction:column;
-gap:15px;
-padding:15px;
+align-items:stretch;
 }
 
-nav{
-flex-wrap:wrap;
-justify-content:center;
+.logo{
+text-align:center;
+font-size:28px;
 }
 
-.search input{
+.search-box{
 width:100%;
 }
 
-.hero{
-height:auto;
-padding:20px;
-text-align:center;
+.search-box input{
+max-width:100%;
+}
+
+.menu{
 justify-content:center;
+flex-wrap:wrap;
 }
 
-.hero-box h1{
-font-size:34px;
+.hero{
+height:320px;
+padding:20px;
+border-radius:18px;
 }
 
-.hero-box p{
+.hero h1{
+font-size:36px;
+}
+
+.hero p{
 font-size:14px;
 }
 
-.hero-box button{
+.hero button{
 width:100%;
 }
 
 .section-title{
+font-size:28px;
 text-align:center;
-font-size:24px;
 }
 
 .cards{
 grid-template-columns:1fr 1fr;
-gap:10px;
+gap:12px;
 }
 
 .card img{
-height:180px;
+height:190px;
+}
+
+.card-content h3{
+font-size:15px;
 }
 
 }
@@ -229,98 +237,103 @@ height:180px;
 </head>
 <body>
 
-<header>
+<!-- TOPBAR -->
+
+<div class="topbar">
 
 <div class="logo">
-RajAnimeX
+AniHive
 </div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Trending</a>
-<a href="#">Latest</a>
-<a href="#">Movies</a>
-</nav>
-
-<div class="search">
-<input type="text" placeholder="Search Anime">
+<div class="search-box">
+<input type="text" placeholder="Search for something...">
 </div>
 
-</header>
+<div class="menu">
+<button>Explore</button>
+<button>New</button>
+<button class="active">Saved</button>
+</div>
+
+</div>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<div class="hero-box">
+<div class="hero-content">
 
-<h1>Watch Anime Online</h1>
+<h1>Solo Leveling</h1>
 
 <p>
-Enjoy premium anime streaming experience with dark cinematic UI on mobile and laptop.
+Watch premium anime shows with modern dark UI and smooth mobile experience.
 </p>
 
 <button>
-Watch Now
+▶ Watch Now
 </button>
 
 </div>
 
 </section>
 
-<section class="section">
+<!-- TRENDING -->
 
 <h2 class="section-title">
-Trending Anime
+Saved Shows
 </h2>
 
 <div class="cards">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
-
 <div class="card-content">
 <h3>Dark Ninja</h3>
-<p>Action Anime Series</p>
+<p>Action Anime</p>
 </div>
-
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200">
-
-<div class="card-content">
-<h3>Tokyo Legend</h3>
-<p>Adventure Anime</p>
-</div>
-
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200">
-
 <div class="card-content">
 <h3>Shadow Hero</h3>
 <p>Fantasy Anime</p>
 </div>
+</div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200">
+<div class="card-content">
+<h3>Tokyo Fight</h3>
+<p>Adventure Anime</p>
+</div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1200">
-
 <div class="card-content">
 <h3>Dragon Fire</h3>
 <p>Trending Anime</p>
 </div>
+</div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200">
+<div class="card-content">
+<h3>Cyber World</h3>
+<p>Sci-Fi Anime</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200">
+<div class="card-content">
+<h3>Night Hunter</h3>
+<p>Dark Anime</p>
+</div>
 </div>
 
 </div>
-
-</section>
-
-<footer>
-© 2026 RajAnimeX • All Rights Reserved
-</footer>
 
 </body>
 </html>
