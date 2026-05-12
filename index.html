@@ -476,7 +476,7 @@ signInWithEmailAndPassword
   };
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-  async function signup() {
+window.signup = async function () {  
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
@@ -488,8 +488,8 @@ const auth = getAuth(app);
   }
 };
 
-async function login() {
-    const email = document.getElementById("email").value;
+window.login = async function () {   
+  const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     try {
