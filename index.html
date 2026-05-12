@@ -442,7 +442,8 @@ Kurosaw is a modern anime streaming UI designed for exploring and organizing ani
 
 <button onclick="login()">Login</button>
 </div>
-function openPopup(){
+<script type="module">
+  function openPopup(){
 document.getElementById('popup').classList.add('active');
 document.getElementById('overlay').classList.add('active');
 }
@@ -497,8 +498,5 @@ async function login() {
     } catch (error) {
         alert(error.message);
     }
-}
-  }
-};
   
 </script>
