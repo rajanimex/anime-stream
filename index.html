@@ -492,11 +492,11 @@ window.login = async function () {
   const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
-    try {
-        await signInWithEmailAndPassword(auth, email, password);
-        alert("Login Successful");
-    } catch (error) {
-        alert(error.message);
-    }
-  };
+try {
+    await signInWithEmailAndPassword(auth, email, password);
+    alert("Login Successful");
+} catch (error) {
+    alert(error.message);
+}
+}
 </script>
